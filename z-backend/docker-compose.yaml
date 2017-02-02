@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  z-backend-uka:
+    container_name: z-backend-uka
+    build: src
+    image: cyb/z-backend
+    restart: unless-stopped
+    volumes:
+      - ./uka/archive:/usr/src/app/archive
+      - ./uka/reports.json:/usr/src/app/reports.json
+      - ./uka/zmal.pdf:/usr/src/app/zmal.pdf
+    ports:
+      - '127.0.0.1:8089:8000'
+    environment:
+      ARCHIVE_URL: https://foreningenbs.no/z-backend-uka/archive/
+
+networks:
+  default:
+    external:
+      name: cyb
