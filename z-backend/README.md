@@ -10,7 +10,7 @@ which this setup is inspired by.
 Make sure the files `uka/reports.json` are
 created before starting the containers.
 
-- `touch cyb/reports.json`
+- `touch uka/reports.json`
 
 Update sources, (re)build Docker image and start containers:
 
